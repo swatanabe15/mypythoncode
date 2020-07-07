@@ -1,0 +1,14 @@
+import csv
+
+with open('Accidental_Drug_Related_Deaths_2012-2018.csv') as csv_file:
+    csv_reader= csv.reader(csv_file, delimiter=',')
+    line_count=0
+    for row in csv_reader:
+        if line_count==0:
+            print(f'column names are{",".join(row)}')
+            line_count+=1
+        else:
+            print(f'\t{row[5]} {row[6]} was age {row[3]} died of {row[13]} or {row[18]} in {row[10]}')
+            line_count+=1
+    print("Processed "+ str(line_count) + " lines")
+    
